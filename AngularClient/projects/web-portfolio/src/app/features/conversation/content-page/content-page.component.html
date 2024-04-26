@@ -1,0 +1,30 @@
+<ng-container *ngIf="content$ | async as content">
+    <div class="p-3" autoHeight conversateOnBack>
+        <div class="col-12 header">
+            <div class="flex justify-content-between">
+
+                <h1>{{content.title}}</h1>
+
+                <div class="header-buttons mt-2 sm:mt-0">
+                    <!-- <button pButton pRipple type="button" icon="fa-solid fa-share-nodes"
+                        class="p-button-outlined"></button> -->
+                    <button pButton pRipple type="button" icon="fa-solid fa-xmark"
+                        class="ml-3 p-button-outlined p-button-secondary" (click)="closeContentPage()"></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 sub-title">
+            <hr>
+            <span class="content-date">{{content.creationDate | date: 'dd MMMM yyyy'}}</span>
+
+            <div *ngIf="content.tags && content.tags.length > 0" class="grid mt-2">
+                <div *ngFor="let tag of content.tags;" class="col-fixed p-1">
+                    <p-tag [value]="tag" severity="info"></p-tag>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-12 dynamic-content" #dynamicContent [innerHTML]="content.content">
+        </div>
+    </div>
+</ng-container>

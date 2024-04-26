@@ -1,0 +1,18 @@
+<ng-container *ngIf="content$ | async as content">
+    <div class="grid p-3 pb-0 flex-column h-full" conversateOnBack>
+        <div class="col-12">
+            <div class="flex justify-content-between flex-wrap align-items-center">
+                
+                    <h2>{{content.name}}</h2>
+            
+                <div class="header-buttons">
+                    <button pButton pRipple type="button" icon="fa-solid fa-arrow-down" class="p-button-outlined" (click)="downloadPdf(content.url)"></button>
+                    <button pButton pRipple type="button" icon="fa-solid fa-xmark" class="ml-3 p-button-outlined p-button-secondary" (click)="closeContentPage()"></button>
+                </div>
+            </div>        
+        </div>
+        <div class="col-12 flex-1">
+            <g-pdf-viewer [src]="content.url"></g-pdf-viewer>
+        </div>
+    </div>
+</ng-container>

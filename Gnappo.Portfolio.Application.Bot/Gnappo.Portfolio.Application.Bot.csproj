@@ -1,0 +1,63 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Features\Conversation\Queries\AdaptiveCards\CardsTemplates\adapriveCardSample.json" />
+    <None Remove="Features\Conversation\Queries\AdaptiveCards\CardsTemplates\adaptiveCardBodyImageTemplate.json" />
+    <None Remove="Features\Conversation\Queries\AdaptiveCards\CardsTemplates\adaptiveCardNoBodyTemplate.json" />
+    <None Remove="Features\Conversation\Queries\AdaptiveCards\CardsTemplates\adaptiveCardOpenUrlAction.json" />
+    <None Remove="Features\Conversation\Queries\AdaptiveCards\CardsTemplates\adaptiveCardSubmitDataAction.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Features\Conversation\Queries\AdaptiveCards\CardsTemplates\adapriveCardSample.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Conversation\Queries\AdaptiveCards\CardsTemplates\adaptiveCardBodyImageTemplate.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Conversation\Queries\AdaptiveCards\CardsTemplates\adaptiveCardNoBodyTemplate.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Conversation\Queries\AdaptiveCards\CardsTemplates\adaptiveCardOpenUrlAction.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Conversation\Queries\AdaptiveCards\CardsTemplates\adaptiveCardSubmitDataAction.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Bot.Builder.Dialogs" Version="4.18.1" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="8.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gnappo.Porfolio.Application\Gnappo.Portfolio.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\ConversationResources.Designer.cs">
+      <DependentUpon>ConversationResources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\ConversationResources.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <LastGenOutput>ConversationResources.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

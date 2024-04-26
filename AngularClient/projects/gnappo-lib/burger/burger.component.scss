@@ -1,0 +1,40 @@
+.g-burger{
+    position: fixed;
+    z-index: 100001;
+    width: 56px !important;
+    height: 56px !important;
+}
+a{
+    font-size: 3rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+::ng-deep{
+    .p-sidebar-left{
+        width: var(--gnappo-leftbar-width) !important;
+    }
+    .p-sidebar .p-sidebar-header+.p-sidebar-content{
+        height: 100%;
+    }
+    .g-burger{
+        span{
+            font-size: 1.55rem !important;
+        }
+    }
+    .g-burger.p-button.p-button-outlined:not(.p-button-secondary){
+        background-color: var(--gnappo-black);
+        
+    }
+
+    .g-burger.p-button.p-button-outlined.p-button-secondary{
+        background-color: var(--gnappo-white);
+        
+    }
+
+    @media screen and (max-width: 960px) {
+        .p-sidebar-left{
+            width: 100vw !important;
+        }
+    }
+}

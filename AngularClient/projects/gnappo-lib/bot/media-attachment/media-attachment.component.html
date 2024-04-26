@@ -1,0 +1,37 @@
+<ng-container *ngIf="innerAttachment as attachment">
+
+    <container-element [ngSwitch]="attachment.contentType">
+        <ng-container *ngSwitchCase="'image/png'">
+            <ng-container [ngTemplateOutlet]="imageattachment"
+                [ngTemplateOutletContext]="{$implicit:attachment}">
+            </ng-container>
+        </ng-container>
+        <ng-container *ngSwitchCase="'image/jpg'">
+            <ng-container [ngTemplateOutlet]="imageattachment"
+                [ngTemplateOutletContext]="{$implicit:attachment}">
+            </ng-container>
+        </ng-container>
+        <ng-container *ngSwitchCase="'image/jpeg'">
+            <ng-container [ngTemplateOutlet]="imageattachment"
+                [ngTemplateOutletContext]="{$implicit:attachment}">
+            </ng-container>
+        </ng-container>
+        <ng-container *ngSwitchCase="'image/gif'">
+            <ng-container [ngTemplateOutlet]="imageattachment"
+                [ngTemplateOutletContext]="{$implicit:attachment}">
+            </ng-container>
+        </ng-container>
+        <ng-container *ngSwitchCase="'image/svg+xml'">
+            <ng-container [ngTemplateOutlet]="imageattachment"
+                [ngTemplateOutletContext]="{$implicit:attachment}">
+            </ng-container>
+        </ng-container>
+
+        <ng-container *ngSwitchDefault>...</ng-container>
+    </container-element>
+</ng-container>
+
+<ng-template #imageattachment let-attachment>
+    <img #bodyimage [hidden]="true" [src]="attachment.contentUrl" class="media-image w-full md:w-7 xl:w-4" (load)="showBodyImage(bodyimage)">
+    <p-skeleton *ngIf="!contentLoded" width="100%" height="40vh"></p-skeleton>
+</ng-template>

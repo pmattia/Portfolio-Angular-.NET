@@ -1,0 +1,41 @@
+
+<ng-container *ngIf="activities$ | async as activities; else loading;">
+  <div class="greeting-container grid flex justify-content-center">
+    <div class="stripe-bg"></div>
+    <div class="greeting-avatar sm:col-12 md:col-6">
+      <img class="w-full" src="./../../../assets/img/me.svg">
+    </div>
+    <div class="sm:col-12 md:col-6" style="max-width: 500px;">
+
+      <ng-container *ngFor="let activity of activities" [ngTemplateOutlet]="chatActivity"
+        [ngTemplateOutletContext]="{$implicit:activity}">
+      </ng-container>
+
+    </div>
+  </div>
+
+  <ng-template #chatActivity let-activity>
+    <div *ngIf="activity.text" class="greeting-message">
+      <div class="baloon">{{activity.text}}</div>
+    </div>
+    <div class="grid greeting-suggestions" *ngIf="activity.suggestedActions && activity.suggestedActions.actions.length > 0">
+      <div class="col-fixed" *ngFor="let action of activity.suggestedActions.actions; let first = first;">
+        <ng-container *ngIf="first">
+          <button pButton pAutoFocus [autofocus]="true" type="button" [label]="action.text"
+            (click)="handleSuggestedAction(action)"></button>
+        </ng-container>
+        <ng-container *ngIf="!first">
+          <button pButton type="button" [label]="action.text" class="p-button-outlined"
+            (click)="handleSuggestedAction(action)"></button>
+        </ng-container>
+      </div>
+    </div>
+  </ng-template>
+</ng-container>
+
+  
+<ng-template #loading>
+  <g-loader imageUrl="./../../../assets/img/doubt.svg" 
+  i18n-loadingText
+  loadingText="Loading"></g-loader>  
+</ng-template>

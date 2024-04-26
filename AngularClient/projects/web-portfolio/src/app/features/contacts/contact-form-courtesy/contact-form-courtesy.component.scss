@@ -1,0 +1,9 @@
+:host ::ng-deep{
+.contact-channel{
+    background-color: transparent !important;
+    transition: 200ms;
+    &:hover{
+        opacity: .7;
+    }
+}
+}

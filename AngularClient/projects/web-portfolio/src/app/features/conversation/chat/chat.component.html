@@ -1,0 +1,39 @@
+<ng-container *ngIf="ui$ | async as ui">
+  <div class="grid grid-nogutter w-full">
+    <div class="relative chat-container col-fixed" [ngClass]="{'collapsed': ui.asideShown}">
+      <div class="grid w-full grid-nogutter flex justify-content-center absolute bottom-0 test">
+        <div #scroller appScrollToBottom [scrollContainer]="scrollercontainer" class="messages col-fixed mb-2">
+          <div #scrollercontainer class="flex flex-column align-items-start w-full">
+            <ng-container *ngFor="let message of messages; let last = last">
+
+              <bot-chat-message [message]="message" [last]="last" [collapsed]="ui.asideShown"
+                (contentLoaded)="chatContentLoaded(scroller)"
+                (selectSuggestion)="handleSuggestedAction($event)"></bot-chat-message>
+
+            </ng-container>
+
+            <bot-chat-skeleton *ngIf="!!messages && isBotTyping" [collapsed]="ui.asideShown"
+              [avatarIconUrl]="lastAvatarIconUrl" [showAvatar]="!isLastMessageFromBot"></bot-chat-skeleton>
+          </div>
+        </div>
+        <div class="messages-footer col-fixed">
+          <hr>
+          <div class="w-full flex justify-content-end py-3 mb-3">
+            <input i18n-placeholder [(ngModel)]="userMessage" type="text" class="w-full" placeholder="write something"
+              pAutoFocus [autofocus]="!isMobile" (keyup.enter)="sendMessage()" pInputText />
+            <button pButton pRipple type="button" icon="fa-solid fa-paper-plane" class="ml-3 p-button-outlined"
+              (click)="sendMessage()"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-fixed aside-panel relative" [ngClass]="{'expanded': ui.asideShown}">
+
+      <g-loader [visible]="(isContentLoading$ | async) || false" [inverseColors]="true"
+        imageUrl="./../../../assets/img/doubt.svg" i18n-loadingText loadingText="Loading"></g-loader>
+
+      <router-outlet name="asidepanel"></router-outlet>
+    </div>
+
+  </div>
+</ng-container>

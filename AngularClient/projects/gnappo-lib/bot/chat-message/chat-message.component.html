@@ -1,0 +1,54 @@
+<ng-container *ngIf="innerMessage?.from?.isBot" [ngTemplateOutlet]="botActivity"
+    [ngTemplateOutletContext]="{$implicit:innerMessage, last:last}">
+</ng-container>
+<ng-container *ngIf="!innerMessage?.from?.isBot" [ngTemplateOutlet]="userActivity"
+    [ngTemplateOutletContext]="{$implicit:innerMessage}">
+</ng-container>
+
+<ng-template #botActivity let-message let-last="last" let-showAvatar="showAvatar">
+    <div class="grid mt-0" [ngClass]="{'collapsed': collapsed}">
+        <div class="col-fixed">
+            <p-avatar [image]="message.from.iconUrl" styleClass="mr-2" size="large" shape="circle">
+            </p-avatar>
+        </div>
+        <div class="col">
+            <ng-container *ngFor="let activity of message.activities; let first = first">
+                <div *ngIf="activity.text" class="baloon from-them mb-2" [ngClass]="{'no-tail' : !first}">
+                    {{activity.text}}
+                    <small>{{activity.timestamp | date: 'HH:mm'}}</small>
+                </div>
+                <div class="grid" *ngIf="activity.attachments && activity.attachments.length > 0">
+                    <div class="col-12" *ngFor="let attachment of activity.attachments; let first = first;">
+                        <bot-media-attachment 
+                            *ngIf="attachment.type === BotAttachmentType.ContentUrl"
+                            [attachment]="attachment"
+                            (loaded)="emitContentLoaded()"
+                            >
+                        </bot-media-attachment>
+                        <bot-adaptive-card-simple 
+                            *ngIf="attachment.type === BotAttachmentType.AdaptiveCard" 
+                            [card]="attachment.adaptiveCard"
+                            (selectSuggestion)="handleSuggestedAction($event)"
+                            (loaded)="emitContentLoaded()"
+                            >
+                        </bot-adaptive-card-simple>
+                    </div>
+                </div>
+                <div class="grid" *ngIf="activity.suggestedActions && activity.suggestedActions.actions.length > 0">
+                    <div class="col-fixed" *ngFor="let action of activity.suggestedActions.actions;">
+                        <button pButton type="button" [label]="action.text" (click)="handleSuggestedAction(action)"
+                            class="p-button-outlined" [ngClass]="{'hidden': action.disabled}"></button>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #userActivity let-message>
+    <div class="baloon from-me no-tail my-3" [ngClass]="{'collapsed': collapsed}"
+        *ngFor="let activity of message.activities">
+        {{activity.text}}
+        <small>{{activity.timestamp | date: 'HH:mm'}}</small>
+    </div>
+</ng-template>

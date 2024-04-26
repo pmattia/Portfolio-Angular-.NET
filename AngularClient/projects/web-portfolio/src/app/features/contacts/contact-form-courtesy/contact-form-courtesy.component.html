@@ -1,0 +1,12 @@
+<ng-container *ngIf="contactMessage$ | async" >
+    <g-courtesy-page conversateOnBack
+        (onHide)="closeContentPage()"
+        [title]="title"
+        [text]="text"
+        [actions]="actions"
+        severity="success">
+        <!-- <span i18n>Se vuoi puoi raggiungermi tramite Linkedin</span>
+        <a class="contact-channel mt-2" href="/">&nbsp;<img src="./../../../../assets/img/LinkedIn_icon.svg" height="60" /></a> -->
+
+    </g-courtesy-page>
+</ng-container>

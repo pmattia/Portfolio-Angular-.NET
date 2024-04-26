@@ -1,0 +1,42 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "body": [
+    {
+      "type": "Image",
+      "url": "https://www.edgeoftheweb.co.uk/uploads/items/8edb3fd689a4dded/8f55e755dd30f89d.jpg?size=1&date=1582039948",
+      "size": "stretch"
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.OpenUrl",
+      "title": "My approach to UX design",
+      "text": "My approach to UX design",
+      "url": "[url]/conversation/article/(asidepanel:ux-design)",
+      "value": {
+        "type": "Article",
+        "object": {
+          "title": "UX design",
+          "url": "ux-design",
+          "tags": [ "UX" ]
+        }
+      }
+    },
+    {
+      "type": "Action.OpenUrl",
+      "title": "UX design in healthcare",
+      "text": "UX design in healthcare",
+      "url": "[url]/conversation/article/(asidepanel:ux-design)",
+      "value": {
+        "type": "Article",
+        "object": {
+          "title": "Development",
+          "url": "development",
+          "tags": [ "UX" ]
+        }
+      }
+    }
+  ]
+}

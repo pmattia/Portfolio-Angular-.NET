@@ -1,0 +1,86 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C61A062E-D168-46C8-96A8-981CA80C24CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9F6B052B-FE43-48DB-9444-5B1F71C8BE8C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{47B93C4F-60A0-4D28-8117-1F56E2D46D74}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{6EA0A82A-711E-4F67-8A2B-D80DE450122D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{53145FE6-FEF3-4814-883B-80A05998B4BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{0DC4C9E0-69A5-4CEC-9C99-5B94ED4F6238}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gnappo.Portfolio.Api", "Gnappo.Portfolio.Api\Gnappo.Portfolio.Api.csproj", "{1F51A1CF-33F2-4C73-B892-EE9FDFF49B5E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gnappo.Portfolio.Bot", "Gnappo.Portfolio.Bot\Gnappo.Portfolio.Bot\Gnappo.Portfolio.Bot.csproj", "{DCDD526D-F223-45C3-9E3F-13968A4F4CE9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gnappo.Portfolio.Bot.Tests", "Gnappo.Portfolio.Bot\Gnappo.Portfolio.Bot.Tests\Gnappo.Portfolio.Bot.Tests.csproj", "{BE933DE6-B5A2-4BAF-A446-E2FFBEB25F2F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gnappo.Portfolio.Application", "Gnappo.Porfolio.Application\Gnappo.Portfolio.Application.csproj", "{893B22E7-341E-459A-8C27-319891D18005}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gnappo.Portfolio.Infrastructure", "Gnappo.Portfolio.Infrastructure\Gnappo.Portfolio.Infrastructure.csproj", "{6D07ED39-8FBF-497A-A93F-D50A76E74074}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gnappo.Portfolio.Domain", "Gnappo.Portfolio.Domain\Gnappo.Portfolio.Domain.csproj", "{18E96BB4-80F6-44C7-97B8-B360E88633C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gnappo.Portfolio.Application.Bot", "Gnappo.Portfolio.Application.Bot\Gnappo.Portfolio.Application.Bot.csproj", "{6FF78D29-64FD-465D-A898-B7CDA8C4054C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F51A1CF-33F2-4C73-B892-EE9FDFF49B5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F51A1CF-33F2-4C73-B892-EE9FDFF49B5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F51A1CF-33F2-4C73-B892-EE9FDFF49B5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F51A1CF-33F2-4C73-B892-EE9FDFF49B5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCDD526D-F223-45C3-9E3F-13968A4F4CE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCDD526D-F223-45C3-9E3F-13968A4F4CE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCDD526D-F223-45C3-9E3F-13968A4F4CE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCDD526D-F223-45C3-9E3F-13968A4F4CE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE933DE6-B5A2-4BAF-A446-E2FFBEB25F2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE933DE6-B5A2-4BAF-A446-E2FFBEB25F2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE933DE6-B5A2-4BAF-A446-E2FFBEB25F2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE933DE6-B5A2-4BAF-A446-E2FFBEB25F2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{893B22E7-341E-459A-8C27-319891D18005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{893B22E7-341E-459A-8C27-319891D18005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{893B22E7-341E-459A-8C27-319891D18005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{893B22E7-341E-459A-8C27-319891D18005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D07ED39-8FBF-497A-A93F-D50A76E74074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D07ED39-8FBF-497A-A93F-D50A76E74074}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D07ED39-8FBF-497A-A93F-D50A76E74074}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D07ED39-8FBF-497A-A93F-D50A76E74074}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18E96BB4-80F6-44C7-97B8-B360E88633C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18E96BB4-80F6-44C7-97B8-B360E88633C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18E96BB4-80F6-44C7-97B8-B360E88633C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18E96BB4-80F6-44C7-97B8-B360E88633C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FF78D29-64FD-465D-A898-B7CDA8C4054C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FF78D29-64FD-465D-A898-B7CDA8C4054C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FF78D29-64FD-465D-A898-B7CDA8C4054C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FF78D29-64FD-465D-A898-B7CDA8C4054C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{47B93C4F-60A0-4D28-8117-1F56E2D46D74} = {C61A062E-D168-46C8-96A8-981CA80C24CC}
+		{6EA0A82A-711E-4F67-8A2B-D80DE450122D} = {C61A062E-D168-46C8-96A8-981CA80C24CC}
+		{53145FE6-FEF3-4814-883B-80A05998B4BD} = {C61A062E-D168-46C8-96A8-981CA80C24CC}
+		{0DC4C9E0-69A5-4CEC-9C99-5B94ED4F6238} = {C61A062E-D168-46C8-96A8-981CA80C24CC}
+		{1F51A1CF-33F2-4C73-B892-EE9FDFF49B5E} = {47B93C4F-60A0-4D28-8117-1F56E2D46D74}
+		{DCDD526D-F223-45C3-9E3F-13968A4F4CE9} = {47B93C4F-60A0-4D28-8117-1F56E2D46D74}
+		{BE933DE6-B5A2-4BAF-A446-E2FFBEB25F2F} = {9F6B052B-FE43-48DB-9444-5B1F71C8BE8C}
+		{893B22E7-341E-459A-8C27-319891D18005} = {6EA0A82A-711E-4F67-8A2B-D80DE450122D}
+		{6D07ED39-8FBF-497A-A93F-D50A76E74074} = {53145FE6-FEF3-4814-883B-80A05998B4BD}
+		{18E96BB4-80F6-44C7-97B8-B360E88633C4} = {6EA0A82A-711E-4F67-8A2B-D80DE450122D}
+		{6FF78D29-64FD-465D-A898-B7CDA8C4054C} = {6EA0A82A-711E-4F67-8A2B-D80DE450122D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B6A14FFD-E0D7-48CD-A362-34D24EAFE05F}
+	EndGlobalSection
+EndGlobal

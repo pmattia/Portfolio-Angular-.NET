@@ -1,0 +1,16 @@
+export const routeErrorUrl = 'error';
+export const routeGreetingUrl = 'greeting';
+export const routeConversationUrl = 'conversation';
+export const routeBlogUrl = 'blog';
+export const routeArticleUrl = 'article';
+export const routePdfUrl = 'pdf';
+export const routeContactsUrl = 'contact';
+export const routeSuccessUrl = 'success';
+export const contentNameParam = 'name';
+export const baseUrl = '/';
+export const curriculumVitae = 'cv';
+export const contactSuccessUrl = `/conversation/(asidepanel:contact/success)`;
+export const webPortfolioApi = 'WEB-PORTFOLIO-API';
+export const criptoKey = 'CRYPTO-KEY';
+export const privacyPolicyUrl = 'PRIVACY-POLICY-URL';
+export const USERID = 'USERID';

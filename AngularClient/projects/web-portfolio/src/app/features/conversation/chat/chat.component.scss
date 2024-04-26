@@ -1,0 +1,119 @@
+$footerHeight: 130px;
+
+:host {
+    background-color: var(--gnappo-black);
+    display: flex;
+    width: 100vw;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+:host ::ng-deep {
+    
+
+    .messages-footer {
+        .p-button {
+            width: 60px !important;
+        }
+
+        .p-inputtext {
+            background-color: transparent;
+            color: var(--gnappo-yellow);
+            border: none;
+            font-size: 1.5rem;
+            font-weight: normal;
+
+            &::placeholder {
+                /* Chrome, Firefox, Opera, Safari 10.1+ */
+                color: var(--gnappo-yellow);
+                opacity: .3;
+                /* Firefox */
+            }
+
+            &:-ms-input-placeholder {
+                /* Internet Explorer 10-11 */
+                color: var(--gnappo-yellow);
+            }
+
+            &::-ms-input-placeholder {
+                /* Microsoft Edge */
+                color: var(--gnappo-yellow);
+            }
+
+            &:enabled:focus {
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+.chat-container {
+    transition: 500ms;
+    width: 100vw;
+    height: 100%;
+
+    &.collapsed {
+        width: var(--gnappo-leftbar-width);
+        .messages-footer,
+        .messages {
+            width: 90%;
+        }
+    }
+
+    .messages-footer,
+    .messages {
+        width: 80%;
+        transition: 500ms;
+    }
+
+    .messages-footer {
+        height: $footerHeight;
+    }
+
+    .messages {
+        display: flex;
+        flex-direction: column;
+
+        max-height: calc(100vh - $footerHeight);
+        overflow-x: hidden;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+
+        bot-chat-message{
+            width: 100%;
+        }
+    }
+}
+
+.aside-panel {
+    width: 0;
+    height: 100vh;
+    transition: 500ms;
+    overflow-x: hidden;
+    background-color: var(--gnappo-white);
+    &.expanded{
+        width:calc(100% - var(--gnappo-leftbar-width));
+    }
+}
+
+hr {
+    border-color: var(--gnappo-yellow);
+}
+
+@media screen and (max-width: 1024px) {
+    .chat-container {
+        &.collapsed{
+            display: none;
+        }
+            .messages-footer,
+            .messages {
+                width: 90%;
+            }
+        
+    }
+    .aside-panel.expanded{
+        width: 100%;
+    }
+}

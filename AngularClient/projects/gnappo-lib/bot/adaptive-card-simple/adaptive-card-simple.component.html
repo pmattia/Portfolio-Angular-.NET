@@ -1,0 +1,19 @@
+<div class="grid" *ngIf="innerCard as card">
+    <div *ngFor="let body of card.body; let index = index" class="col-12">
+        <ng-container *ngIf="body.type === 'Image' && !!body.url">
+            <img #bodyimage 
+                [hidden]="true"
+                [src]="body.url" 
+                class="cover" 
+                (load)="showBodyImage(index, bodyimage)">
+            <p-skeleton *ngIf="!bodyContentsLoded[index]" width="100%" height="60px"></p-skeleton>
+        </ng-container>
+
+    </div>
+    <div class="col-12">
+        <div class="col px-0" *ngFor="let action of card.actions;">
+            <button pButton type="button" [label]="!!action.text ? action.text! : action.title!" (click)="handleSuggestedAction(action)"
+                class="p-button-outlined"></button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+:host {
+    display: flex;
+    flex-direction: column;
+}
+
+:host ::ng-deep {
+    .typing-skeleton>div{
+        background-color: var(--gnappo-yellow);
+    }
+    :not(.collapsed) {
+        .typing-skeleton {
+            margin-left: 124px;
+        }
+    }
+
+    .collapsed {
+
+        .typing-skeleton {
+            margin-left: 74px !important;
+        }
+    }
+    .p-avatar{
+        &.p-avatar-circle {
+            background-color: var(--gnappo-yellow);
+        }
+    }
+
+    @media screen and (max-width: 960px) {
+
+        .p-avatar.p-avatar-xl {
+            margin-left: 5px !important;
+        }
+
+        .p-avatar.p-avatar-lg {
+            margin-left: 5px !important;
+            width: 60px;
+            height: 60px;
+        }
+        
+        :not(.collapsed) {
+            .typing-skeleton {
+                margin-left: 80px;
+            }
+        }
+    }
+}

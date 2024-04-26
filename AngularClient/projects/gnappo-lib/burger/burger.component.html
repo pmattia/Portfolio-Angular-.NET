@@ -1,0 +1,19 @@
+<button pRipple pButton 
+        icon="fa-solid {{!megamenuVisibility ? 'fa-bars': 'fa-xmark'}}"
+        [ngClass]="{'p-button-secondary' : !megamenuVisibility && !darkMode}" 
+        class="g-burger p-button-rounded p-button-outlined fadein"
+        (click)="toggleMegamenu()"
+        >
+</button>
+<p-sidebar 
+    [(visible)]="megamenuVisibility" 
+    [fullScreen]="fullScreen"
+    appendTo="body"
+    [showCloseIcon]="false" 
+    [baseZIndex]="10000">
+    <div class="grid flex justify-content-center h-full align-content-center">
+        <div *ngFor="let item of innerModel" class="col-12 flex justify-content-center align-items-center">
+            <a href="javascript:void(0)" (click)="openLink(item)"><i [class]="item.icon" class="mr-3"></i>{{item.label}}</a>
+        </div>
+    </div>
+</p-sidebar>

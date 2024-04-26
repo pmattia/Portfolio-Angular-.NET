@@ -1,0 +1,17 @@
+<div *ngIf="visible" 
+    class="loader fadein animation-duration-200"
+    [ngClass]="{'inverse': inverseColors}"
+    [ngStyle]="{'z-index': zIndex }">
+    <p-progressBar mode="indeterminate"></p-progressBar>
+    <div class="tissue"></div>
+    <div *ngIf="!!loadingText"
+        [ngClass]="{'ml-5': !!imageUrl, 'ml-3': !!!imageUrl}"
+        class="loader-message mr-3">
+        <p-avatar *ngIf="!!imageUrl" [image]="imageUrl" 
+            styleClass="mr-2 pulse" 
+            size="xlarge" 
+            shape="circle">
+        </p-avatar>
+        <div>{{loadingText}}</div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<g-courtesy-page *ngIf="!(userConsent$ | async)" 
+    [showCloseButton]="false"
+    i18n-title
+    title="Cookie consent"
+    severity="info"
+    [actions]="actions"
+    [inverseColors]="true"
+    [noActionPriority]="true"
+    >
+
+    
+    
+    
+    <h2><ng-container i18n>Attention, to proceed you must accept the</ng-container>&nbsp;<a [href]="privacyPolicyPageUrl" target="_blank" title="Privacy Policy ">Privacy Policy</a>.
+    </h2>
+    <p class="text-white">Questo sito fa uso delle seguenti tecnologie di tracciamento.</p>
+    <div class="grid tracking-logos">
+        <div class="col-6">
+            <img class="w-full" src="./../../../assets/img/openai-logo.svg">
+        </div>
+        <div class="col-6">
+            <img class="w-full" src="./../../../assets/img/google-analytics-logo.svg">
+        </div>
+    </div>
+
+</g-courtesy-page>

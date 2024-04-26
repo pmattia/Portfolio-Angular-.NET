@@ -1,0 +1,160 @@
+:host {
+    display: flex;
+    flex-direction: column;
+}
+
+:host ::ng-deep {
+    .p-avatar.p-avatar-circle {
+        background-color: var(--gnappo-yellow);
+    }
+
+    :not(.collapsed) {
+        .p-avatar.p-avatar-xl {
+            transition: 500ms;
+            width: 200px;
+            height: 200px;
+        }
+
+        .p-avatar.p-avatar-lg {
+            transition: 500ms;
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    .baloon.collapsed {
+        font-size: 1rem;
+    }
+
+    .collapsed {
+        .p-button {
+            font-size: 1rem;
+        }
+        
+        .baloon {
+            font-size: 1rem;
+        }
+
+        .p-avatar.p-avatar-xl {
+            width: 50px !important;
+            height: 50px !important;
+        }
+
+        .p-avatar.p-avatar-lg {
+            width: 50px !important;
+            height: 50px !important;
+        }
+    }
+
+    @media screen and (max-width: 960px) {
+
+        .p-avatar.p-avatar-xl {
+            width: 60px !important;
+            height: 60px !important;
+        }
+
+        .p-avatar.p-avatar-lg {
+            width: 60px !important;
+            height: 60px !important;
+        }
+    }
+}
+
+.baloon {
+    border-radius: 5px;
+    line-height: 1.25;
+    max-width: 75%;
+    padding: 1rem;
+    padding-bottom: .5rem;
+    position: relative;
+    word-wrap: break-word;
+    transition: 500ms;
+
+    small {
+        display: block;
+        width: 100%;
+        text-align: right;
+        color: var(--gnappo-darkGrey);
+        font-size: 14px;
+    }
+
+    &:before,
+    :after {
+        bottom: -0.1rem;
+        content: "";
+        height: 1rem;
+        position: absolute;
+    }
+
+    &.from-me {
+        align-self: flex-end;
+        background-color: var(--gnappo-yellow);
+        color: var(--gnappo-black);
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 0 !important;
+            height: 0 !important;
+            top: 10px;
+            right: -23px;
+            border: 0.75rem solid transparent;
+            border-left-color: var(--gnappo-yellow);
+        }
+
+        &~p.from-me {
+            margin: 0.25rem 0 0;
+        }
+
+        &~p.from-me:not(:last-child) {
+            margin: 0.25rem 0 0;
+        }
+
+        &~p.from-me:last-child {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    &.from-them {
+        align-items: flex-start;
+        background-color: var(--gnappo-white);
+        color: var(--gnappo-black);
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 0 !important;
+            height: 0 !important;
+            top: 10px;
+            left: -23px;
+            border: 0.75rem solid transparent;
+            border-right-color: var(--gnappo-white);
+        }
+    }
+
+    &[class^="from-"] {
+        margin: 0.5rem 0;
+        width: fit-content;
+    }
+
+    &[class^="from-"].emoji {
+        background: none;
+        font-size: 2.5rem;
+
+        &:before {
+            content: none;
+        }
+    }
+}
+
+
+.no-tail::before {
+    display: none;
+}
+
+@media screen and (max-width: 960px) {
+    .baloon {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+}

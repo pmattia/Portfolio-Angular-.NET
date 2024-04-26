@@ -1,0 +1,11 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/gnappo-lib",
+  "assets": [
+    { "input": "assets/fonts", "glob": "**/*.*", "output": "assets/fonts" },
+    { "input": "assets/fa", "glob": "**/*.*", "output": "assets/fa" }
+  ],
+  "lib": {
+    "entryFile": "public_api.ts"
+  }
+}

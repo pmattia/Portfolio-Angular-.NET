@@ -1,0 +1,65 @@
+<div class="grid p-3" autoHeight conversateOnBack>
+    <div class="col-12">
+        <div class="flex justify-content-between flex-wrap align-items-center">
+
+            <h2 i18n>Contact me</h2>
+
+            <div class="header-buttons">
+                <button pButton pRipple type="button" icon="fa-solid fa-xmark"
+                    class="ml-3 p-button-outlined p-button-secondary" (click)="closeContentPage()"></button>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <hr>
+    </div>
+    <div class="col-12">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <div class="grid grid-nogutter">
+                <div class="col-12">
+
+                    <div class="field">
+                        <label i18n for="name">Name</label>
+                        <input id="name" type="text" class="w-full" formControlName="name"
+                            pAutoFocus [autofocus]="true" pInputText />
+                    </div>
+                    <div class="field">
+                        <label i18n for="reason">Reason</label>
+                        <p-dropdown placeholder="Seleziona una motivazione" 
+                            id="reason" 
+                            dropdownIcon="fa-solid fa-chevron-down" 
+                            [options]="reasons" 
+                            formControlName="reason"
+                            styleClass="w-full" optionLabel="label"></p-dropdown>
+                    </div>
+                    <div class="field">
+                        <label i18n for="email">Email</label>
+                        <input id="email" type="text" class="w-full" formControlName="email" formControlName="email"
+                            pInputText />
+                    </div>
+                    <div class="field">
+                        <label i18n for="message">Message</label>
+                        <textarea id="message" pInputTextarea [rows]="9" [autoResize]="true" class="w-full" formControlName="message"
+                        ></textarea>
+                    </div>
+                </div>
+                <div class="col-12 mb-3">
+                    <ng-container i18n>
+                        By sending the request I declare that I have read and accepted the 
+                    </ng-container>
+                    
+                    <a [href]="privacyPolicyPageUrl" target="_blank" i18n>privacy policy</a>
+                </div>
+                <div class="col-12">
+                    <button [disabled]="!contactForm.valid" i18n-label pButton pRipple type="submit"
+                        icon="fa-solid fa-paper-plane" i18n-label label="Submit"></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<g-loader [visible]="(isSending$ | async) || false" [inverseColors]="true" 
+        imageUrl="./../../../assets/img/lol.svg" 
+        i18n-loadingText
+        loadingText="Sending contact request">
+    </g-loader>

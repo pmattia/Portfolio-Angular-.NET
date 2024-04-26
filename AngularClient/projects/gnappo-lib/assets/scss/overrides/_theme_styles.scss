@@ -1,0 +1,137 @@
+/* Add your customizations of theme here */
+
+/* roboto-regular - latin-ext_latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'),
+    url('./fonts/roboto-v20-latin-ext_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./fonts/roboto-v20-latin-ext_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-500 - latin-ext_latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Roboto Medium'), local('Roboto-Medium'),
+    url('./fonts/roboto-v20-latin-ext_latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./fonts/roboto-v20-latin-ext_latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-700 - latin-ext_latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Roboto Bold'), local('Roboto-Bold'),
+    url('./fonts/roboto-v20-latin-ext_latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('./fonts/roboto-v20-latin-ext_latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+*::-webkit-scrollbar {
+    width: 0.5em;
+    height: 0.5em;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: $darkGrey;
+}
+
+*::-webkit-scrollbar-track {
+    background: $grey;
+}
+
+body{
+    font-family: 'Roboto';
+    font-size: 1.35rem;
+    color: $black;
+    margin: 0;
+    background-color: $white;
+    overflow: hidden;
+}
+
+hr{
+    border-color: $grey
+}
+  
+h2,h1{
+    margin: 0;
+    font-size: 1.5em;
+    a{
+        display:unset;
+    }
+}
+.p-card-title{
+    color: $primaryColor;
+}
+.p-card-subtitle{
+    color: $primaryColor;
+}
+a{
+    color: $yellow;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    background-color: $black;
+    padding-left: 3px;
+    padding-right: 3px;
+    transition: 200ms;
+
+}
+
+ul{
+    margin: 0;
+}
+
+.p-speeddial-opened .p-speeddial-item{
+    color: $yellow;
+    
+    .p-speeddial-action{
+        // border: 1px solid $yellow;
+        color: $yellow;
+    }
+}
+
+p,li{
+    line-height: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+    .quote {
+        width: 250px;
+    }
+}
+
+.quote div {
+    --qpadding: 1rem;
+    --qHeight: 4rem;
+    --qSize: 250px;
+
+    width: var(--qSize);
+    height: var(--qSize);
+    background-color: var(--gnappo-black);
+    border-radius: 50%;
+    color: var(--gnappo-yellow);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+
+    &::before {
+        content: "";
+        margin-left: calc(var(--qpadding)* -1);
+        margin-top: calc(var(--qpadding)* -4);
+        margin-bottom: var(--qpadding);
+        height: var(--qHeight);
+        width: calc(var(--qHeight)* 1.1);
+        background-image: radial-gradient(circle at bottom right, transparent calc(var(--qHeight) / 4), var(--gnappo-darkGrey) calc(var(--qHeight) / 4) calc(var(--qHeight) / 2), transparent calc(var(--qHeight) / 2)), linear-gradient(var(--gnappo-darkGrey), var(--gnappo-darkGrey));
+        background-size: calc(var(--qHeight) / 2) calc(var(--qHeight) / 2);
+        background-position: top left, bottom left;
+        background-repeat: space no-repeat;
+    }
+
+    .quote-text {
+        font-style: italic;
+    }
+}

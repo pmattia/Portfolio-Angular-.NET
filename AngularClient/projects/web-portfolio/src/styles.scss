@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: var(--gnappo-black);
+}
+
+
+@media screen and (min-width: 1600px) {
+    .p-button {
+        font-size: 1.35rem;
+    }
+}
+
+
+@media (min-aspect-ratio: 8/5) and (max-height: 500px) {
+    body{
+            background-color: val(--gnappo-black);
+            * {
+                display: none;
+            }
+           }
+  }

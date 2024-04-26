@@ -1,0 +1,10 @@
+{
+  "type": "Action.OpenUrl",
+  "title": "##ACTIONTITLE##",
+  "text": "##ACTIONTITLE##",
+  "url": "##ACTIONURL##",
+  "value": {
+    "contentType": "##ACTIONCONTENTTYPE##",
+    "contentName": "##ACTIONCONTENTNAME##"
+  }
+}

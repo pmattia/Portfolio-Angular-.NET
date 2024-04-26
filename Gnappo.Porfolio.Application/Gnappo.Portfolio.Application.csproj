@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Features\Articles\Commands\**" />
+    <Compile Remove="Features\Topics\Commands\**" />
+    <EmbeddedResource Remove="Features\Articles\Commands\**" />
+    <EmbeddedResource Remove="Features\Topics\Commands\**" />
+    <None Remove="Features\Articles\Commands\**" />
+    <None Remove="Features\Topics\Commands\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gnappo.Portfolio.Domain\Gnappo.Portfolio.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

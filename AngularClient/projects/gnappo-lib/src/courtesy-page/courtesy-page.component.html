@@ -1,0 +1,71 @@
+<div class="grid m-0 p-3 md:flex-column md:h-full"
+    [ngClass]="{'inverse':inverseColors}">
+    <div class="col-12">
+        <div class="flex justify-content-between flex-wrap align-items-center">
+
+            <h1>{{title}}</h1>
+
+            <div class="header-buttons" *ngIf="showCloseButton">
+                <button pButton pRipple type="button" icon="fa-solid fa-xmark"
+                    class="ml-3 p-button-outlined p-button-secondary" (click)="closeContentPage()"></button>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <hr>
+    </div>
+    <div class="col-12 flex-1 align-items-center flex">
+        <div class="grid mb-5">
+            <div class="avatar-container col-fixed">
+                <ng-container [ngSwitch]="severity">
+                    <p-avatar *ngSwitchCase="'info'" image="./../../../../assets/img/smile.svg" styleClass="mr-2"
+                        size="xlarge" shape="circle">
+                    </p-avatar>
+                    <p-avatar *ngSwitchCase="'success'" image="./../../../../assets/img/lol.svg" styleClass="mr-2"
+                        size="xlarge" shape="circle">
+                    </p-avatar>
+                    <p-avatar *ngSwitchCase="'warn'" image="./../../../../assets/img/doubt.svg" styleClass="mr-2"
+                        size="xlarge" shape="circle">
+                    </p-avatar>
+                    <p-avatar *ngSwitchCase="'error'" image="./../../../../assets/img/embarassed.svg" styleClass="mr-2"
+                        size="xlarge" shape="circle">
+                    </p-avatar>
+                </ng-container>
+
+            </div>
+            <div class="col align-items-center flex">
+                <div class="grid">
+                    <div class="col-12 dynamic-content">
+                        <h2 *ngIf="text">{{text}}</h2>
+                        <ng-content></ng-content>
+                    </div>
+                    <div class="col-12" *ngIf="actions && actions.length > 0">
+                        <div class="grid">
+                            <div class="col-fixed" *ngFor="let action of actions; let first = first;">
+                              <ng-container *ngIf="first && !noActionPriority">
+                                <button pButton pAutoFocus 
+                                [autofocus]="true" 
+                                class="p-button-lg" 
+                                [ngClass]="{'p-button-secondary': !inverseColors}"   
+                                
+                                type="button"
+                                 [label]="action.label"
+                                  (click)="action.action()"></button>
+                              </ng-container>
+                              <ng-container *ngIf="!first || noActionPriority">
+                                <button pButton type="button" 
+                                class="p-button-lg" 
+                                [label]="action.label" 
+                                [ngClass]="{'p-button-outlined': inverseColors, 'p-button-secondary': !inverseColors}"   
+                                
+                                  (click)="action.action()"></button>
+                              </ng-container>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

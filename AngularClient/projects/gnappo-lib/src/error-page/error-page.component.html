@@ -1,0 +1,8 @@
+<g-courtesy-page *ngIf="model$ | async as model"
+    [showCloseButton]="false"
+    [title]="model.title"
+    [text]="model.text"
+    severity="error"
+    [actions]="model.actions"
+    [inverseColors]="true">
+</g-courtesy-page>
